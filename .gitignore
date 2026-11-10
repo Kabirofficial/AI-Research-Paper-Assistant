@@ -1,0 +1,108 @@
+# ==========================================
+# AI Research Paper Assistant - .gitignore
+# ==========================================
+
+# --- Python ---
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+share/python-wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# Virtual Environments
+.venv/
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+
+# Testing & Coverage
+.pytest_cache/
+.coverage
+.coverage.*
+htmlcov/
+nosetests.xml
+coverage.xml
+*.cover
+*.py,cover
+.hypothesis/
+
+# --- Node / Frontend ---
+node_modules/
+frontend/node_modules/
+frontend/dist/
+frontend/.vite/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+.npm
+
+# --- Environment Variables & Secrets ---
+.env
+.env.*
+!.env.example
+*.env
+backend/.env
+frontend/.env
+!backend/.env.example
+!frontend/.env.example
+
+# --- Local Databases & SQLite ---
+*.db
+*.sqlite
+*.sqlite3
+backend/storage/*.db
+backend/storage/*.sqlite3
+
+# --- Storage Directories (keep .gitkeep only) ---
+backend/storage/documents/*
+!backend/storage/documents/.gitkeep
+backend/storage/extracted_text/*
+!backend/storage/extracted_text/.gitkeep
+backend/storage/vector_store/*
+!backend/storage/vector_store/.gitkeep
+backend/storage/exports/*
+!backend/storage/exports/.gitkeep
+
+# Temporary / scratch files
+scratch/
+tmp/
+*.tmp
+backend/updates.txt
+
+# --- IDEs & System Files ---
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+*.swp
+*.swo
+*~
+
+# Operating System
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
