@@ -14,8 +14,8 @@ Please be respectful, constructive, and collaborative in all issues, pull reques
 
 ### 1. Clone the Repository
 ```bash
-git clone https://github.com/your-username/ai-research-assistant.git
-cd ai-research-assistant/backend
+git clone https://github.com/Kabirofficial/AI-Research-Paper-Assistant.git
+cd AI-Research-Paper-Assistant/backend
 ```
 
 ### 2. Create and Activate Virtual Environment

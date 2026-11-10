@@ -123,8 +123,8 @@ flowchart TD
 ### 1. Clone the Repository
 
 ```bash
-git clone https://github.com/your-username/ai-research-assistant.git
-cd ai-research-assistant
+git clone https://github.com/Kabirofficial/AI-Research-Paper-Assistant.git
+cd AI-Research-Paper-Assistant
 ```
 
 ---
@@ -286,3 +286,4 @@ Contributions are warmly welcomed! Please read our [Contributing Guide](CONTRIBU
 ## 📄 License
 
 This project is open-source and released under the [MIT License](LICENSE).
+

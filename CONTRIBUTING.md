@@ -154,3 +154,4 @@ ai-research-assistant/
 If you find this project helpful, consider supporting future development:
 
 <a href="https://www.buymeacoffee.com/JinggXD"><img src="https://img.buymeacoffee.com/button-api/?text=Buy me a book&emoji=📖&slug=JinggXD&button_colour=5F7FFF&font_colour=ffffff&font_family=Comic&outline_colour=000000&coffee_colour=FFDD00" /></a>
+
