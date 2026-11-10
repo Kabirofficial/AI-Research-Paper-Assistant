@@ -1,9 +1,6 @@
-import json
 import logging
-import re
 import uuid
-from datetime import datetime, timezone
-from typing import Any
+from datetime import UTC, datetime
 
 from sqlalchemy import select
 from sqlalchemy.orm import Session
@@ -179,7 +176,7 @@ class SummaryService:
             saved_summary.future_directions = parsed.get("future_directions")
             saved_summary.llm_provider = active_provider
             saved_summary.llm_model = active_model
-            saved_summary.updated_at = datetime.now(timezone.utc)
+            saved_summary.updated_at = datetime.now(UTC)
         else:
             saved_summary = PaperSummary(
                 id=str(uuid.uuid4()),

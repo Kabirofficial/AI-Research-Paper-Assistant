@@ -63,7 +63,7 @@ async def upload_document(
         raise HTTPException(
             status_code=status.HTTP_409_CONFLICT,
             detail={
-                "message": f"Document already exists (SHA-256 match).",
+                "message": "Document already exists (SHA-256 match).",
                 "existing_document_id": existing_doc.id,
                 "original_filename": existing_doc.original_filename,
             },

@@ -1,13 +1,12 @@
 import logging
 import uuid
-from datetime import datetime, timezone
+from datetime import UTC, datetime
 from typing import Any
 
 from fastapi import APIRouter, Depends, HTTPException, Query, status
 from sqlalchemy import func, select
 from sqlalchemy.orm import Session, selectinload
 
-from app.core.config import settings
 from app.core.database import get_db
 from app.models.chat import Conversation, Message, MessageSource
 from app.models.document import Document
@@ -20,8 +19,7 @@ from app.schemas.chat import (
     MessageResponse,
     MessageSourceResponse,
 )
-from app.services.llm_service import LLMService
-from app.services.rag_service import RAGService, SYSTEM_PROMPT
+from app.services.rag_service import RAGService
 
 logger = logging.getLogger(__name__)
 
@@ -274,7 +272,7 @@ def send_message(
             )
         )
 
-    conv.updated_at = datetime.now(timezone.utc)
+    conv.updated_at = datetime.now(UTC)
     db.commit()
     db.refresh(asst_msg)
 

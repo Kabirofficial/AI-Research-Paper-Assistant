@@ -1,4 +1,5 @@
 from unittest.mock import patch
+
 from fastapi.testclient import TestClient
 from sqlalchemy.orm import Session
 
@@ -73,7 +74,8 @@ def test_rag_document_scoping(client: TestClient, db_session: Session) -> None:
         pages=[("Paper A Title\nAttention mechanisms in NLP models.")],
     )
     res1 = client.post("/documents/upload", files={"file": ("papera.pdf", pdf1, "application/pdf")})
-    doc_a_id = res1.json()["id"]
+    assert res1.status_code == 201
+    assert res1.json()["id"] is not None
 
     pdf2 = create_sample_pdf(
         title="Paper B Convolutions",

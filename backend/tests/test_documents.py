@@ -1,7 +1,4 @@
-import io
-from pathlib import Path
 import pymupdf
-import pytest
 from fastapi.testclient import TestClient
 
 

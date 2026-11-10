@@ -6,7 +6,7 @@ from pathlib import Path
 from typing import Any
 
 import pymupdf
-from fastapi import HTTPException, UploadFile, status
+from fastapi import HTTPException, status
 
 from app.core.config import settings
 

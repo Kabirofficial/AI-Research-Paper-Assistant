@@ -1,7 +1,5 @@
-import json
 import re
-from datetime import datetime, timezone
-from typing import Any
+from datetime import UTC, datetime
 
 from app.models.chat import Conversation, Message
 from app.models.document import Document
@@ -116,7 +114,7 @@ class ExportService:
         last_name = first_author.split()[-1] if first_author.split() else "Author"
         clean_last = re.sub(r"\W+", "", last_name).lower()
 
-        year = str(doc.publication_year) if doc.publication_year else datetime.now(timezone.utc).strftime("%Y")
+        year = str(doc.publication_year) if doc.publication_year else datetime.now(UTC).strftime("%Y")
 
         # First keyword from title
         words = [w for w in re.sub(r"[^\w\s]", "", title).lower().split() if len(w) > 3]

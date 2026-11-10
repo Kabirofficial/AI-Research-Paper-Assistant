@@ -11,7 +11,6 @@ from sqlalchemy.orm import Session
 
 from app.core.config import settings
 from app.models.chunk import Chunk
-from app.models.document import Document
 from app.services.embedding_service import EmbeddingService
 
 logger = logging.getLogger(__name__)

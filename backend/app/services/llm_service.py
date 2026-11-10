@@ -96,7 +96,7 @@ class OllamaProvider(BaseLLMProvider):
                 models,
             )
 
-        except (httpx.ConnectError, httpx.TimeoutException) as e:
+        except (httpx.ConnectError, httpx.TimeoutException):
             return (
                 False,
                 f"Cannot connect to Ollama at {self.base_url}. Ensure the Ollama service is running.",
@@ -146,7 +146,7 @@ class OllamaProvider(BaseLLMProvider):
             )
         except httpx.TimeoutException:
             raise RuntimeError(
-                f"Ollama request timed out after 120 seconds while generating response."
+                "Ollama request timed out after 120 seconds while generating response."
             )
         except Exception as e:
             raise RuntimeError(f"Ollama inference error: {str(e)}")
@@ -173,7 +173,7 @@ class OpenAIProvider(BaseLLMProvider):
             )
 
         try:
-            from openai import OpenAI, AuthenticationError, APIConnectionError
+            from openai import OpenAI
 
             client = OpenAI(api_key=self.api_key.strip(), timeout=10.0)
             models_page = client.models.list()
